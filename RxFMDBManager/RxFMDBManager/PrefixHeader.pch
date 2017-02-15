@@ -1,0 +1,31 @@
+//
+//  PrefixHeader.pch
+//  RxFMDBManager
+//
+//  Created by RXL on 17/2/9.
+//  Copyright © 2017年 RXL. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "FMDBManager.h"
+#import <SVProgressHUD.h>
+#import <FMDB.h>
+#import <MJExtension/MJExtension.h>
+#import "NSString+BAKit.h"
+#import "RxStudentModel.h"
+
+
+#pragma mark - 数据库路径
+#define SQlitePath(sqliteName) [[NSString BA_path_getDocumentsPath] stringByAppendingString:[NSString stringWithFormat:@"/%@.db",sqliteName]]
+
+
+
+#ifdef DEBUG
+# define DLog(fmt, ...) NSLog((@"\n[File:%s]\n" "[Function:%s]\n" "[Line:%d] \n" fmt), __FILE__, __FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+# define DLog(...);
+#endif
+
+#endif /* PrefixHeader_pch */
